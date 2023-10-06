@@ -10,7 +10,7 @@ This project is an Object-Oriented Programming (OOP) example.
 
 
 ```shell
-git clone --branch add-parse-feature https://github.com/Ahmed-Essam-AEE/Siemens-OOP-A1.git
+git clone https://github.com/Ahmed-Essam-AEE/Siemens-OOP-A1.git
 cd Siemens-OOP-A1/OOP_Session_Assignment/
 ```
 
