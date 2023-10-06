@@ -1,31 +1,28 @@
 #pragma once
+
 #include <iostream>
 #include <string>
-#include "EcpriFrame.h"
-#include "RawFrame.h"
-class Packet
-{
-protected:
-	std::string packetLine;
-	std::string crc;
-	std::string destinationAddress;
-	std::string sourceAddress;
-	std::string type;
 
-private:
-	void setCRC();
-	void setDestinationAddress();
-	void setSourceAddress();
+#include "Parameter.h"
 
-public:
-	Packet(std::string line); // Main Constructor
+using namespace std;
 
-	static std::string getType(std::string line);
-	static Packet DefinePacketType(std::string line);
-	void setFrameParameters();
-
-	// TODO override method to display the information of different packets
-	virtual void displayInformation();
-
+class Packet {
+	protected:
+		string packet;
+		Parameter preambles = {.startByte = 0, .sizeInBytes = 8};
+		Parameter crc = {.sizeInBytes = 4};
+		Parameter destinationAddress = {.startByte = 8, .sizeInBytes = 6};
+		Parameter sourceAddress = {.startByte = 14, .sizeInBytes = 6};
+		Parameter type = {.startByte = 20, .sizeInBytes = 2};
+		Parameter data = {.startByte = 22};
+		void parseCommon();
+		virtual void parse() = 0;
+		virtual void print() = 0;
+	public:
+		Packet(string packet){
+			this->packet = packet;
+			crc.startByte = (packet.length() - crc.sizeInBytes *2) / 2;
+			data.sizeInBytes = crc.startByte - data.startByte;
+		}
 };
-
