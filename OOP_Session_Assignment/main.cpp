@@ -54,6 +54,7 @@ int main() {
     
     output_file.close();
 
+    cout << "Output file generated successfully" << endl;
 
     return 0;
 }
