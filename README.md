@@ -2,18 +2,30 @@
 
 This project is an Object-Oriented Programming (OOP) example.
 
-## Build Instructions
+
+## Instructions
+
+
+### Download
+
+
+```shell
+git clone --branch add-parse-feature https://github.com/Ahmed-Essam-AEE/Siemens-OOP-A1.git
+cd Siemens-OOP-A1/OOP_Session_Assignment/
+```
+
+### Build
 
 To build this project, you can use the following command:
 
 ```shell
 g++ -g main.cpp Packet.cpp RawFramePacket.cpp EcpriPacket.cpp -o oop
 ```
-## Run
+### Run
 ```shell
 ./oop
 ```
-## Debug
+### Debug
 ```shell
 gdb oop
 ```
