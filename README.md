@@ -12,7 +12,7 @@ git clone --branch add-parse-feature https://github.com/Ahmed-Essam-AEE/Siemens-
 cd Siemens-OOP-A1/OOP_Session_Assignment/
 ```
 
-### Build Instructions
+### Build
 
 To build this project, you can use the following command:
 
